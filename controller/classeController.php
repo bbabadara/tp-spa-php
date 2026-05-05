@@ -1,23 +1,15 @@
 <?php
-require_once(ROOT."model/model.php");
-require_once(ROOT."views/header.php");
-// die("after header");
+require_once(ROOT."model/classeModel.php");
+$view=ROOT."views/classes";
 
 
- $page="alletudiant";
+ $page="allclasse";
  if (isset($_REQUEST["page"])) {
     $page=$_REQUEST["page"];
  }
- if ($page=="alletudiant") {
-    $etudiants=getAllEtudiant();
-    require_once(ROOT."views/alletudiant.php");
- }elseif ($page=="dev") {
-    $etudiants=getEtudiantsByFiliere(filiere: "dev");
-    require_once(ROOT."views/dev.php");
- } 
- elseif ($page=="dn") {
-    $etudiants=getEtudiantsByFiliere(filiere: "dn");
-    require_once(ROOT."views/dn.php");
+ if ($page=="allclasse") {
+    $classes=getAllClasses();
+    require_once($view."/liste.php");
  }
  elseif ($page=="ajout") {
     $errors=[];
@@ -40,14 +32,13 @@ require_once(ROOT."views/header.php");
         "filiere"=>$_POST["filiere"]
     ];
     // addEtudiant($newEtudiant);
-    header("location:".WEBROOT."?page=alletudiant");
+    header("location:".WEBROOT."?page=allclasse");
     exit();
  }
    
     // var_dump($_POST);
 
-    require_once(ROOT."views/ajout.php");
+    require_once($view."/ajout.php");
  }else{
     echo "page introuvable";
  }
- require_once(ROOT."views/footer.php");

@@ -17,8 +17,8 @@
                             <th class="px-6 py-3">Prénom</th>
                             <th class="px-6 py-3">Email</th>
                             <th class="px-6 py-3">Téléphone</th>
-                            <th class="px-6 py-3">Niveau</th>
-                            <th class="px-6 py-3">Filière</th>
+                            <th class="px-6 py-3">Classe</th>
+                            <!-- <th class="px-6 py-3">Filière</th> -->
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
@@ -31,14 +31,14 @@
                             <td class="px-6 py-4"><?= $value["telephone"] ?></td>
                             <td class="px-6 py-4">
                                 <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-semibold">
-                                    <?= $value["niveau"] ?>
+                                    <?= $value["classe_id"] ?>
                                 </span>
                             </td>
-                            <td class="px-6 py-4">
+                            <!-- <td class="px-6 py-4">
                                 <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-semibold">
                                     <?= $value["filiere"] ?>
                                 </span>
-                            </td>
+                            </td> -->
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

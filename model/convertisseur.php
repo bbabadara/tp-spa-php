@@ -10,7 +10,7 @@ function arrayToJson(array $datas):void{
     file_put_contents(ROOT."db/data.json",$json);
 
 }
-function arrayToJson2(string $key,array $data):void{
+function addToJson(string $key,array $data):void{
     $datas=jsonToArray();
     $datas[$key][]=$data;
     $json=json_encode($datas,JSON_PRETTY_PRINT);
